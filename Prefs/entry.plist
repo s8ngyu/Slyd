@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = STUPrefs;
+	cell = PSLinkCell;
+	detail = STUPrefsListController;
+	isController = 1;
+	label = SlideToUnlock;
+	icon = icon.png;
+    };
+}
