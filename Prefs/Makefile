@@ -1,6 +1,6 @@
 include $(THEOS)/makefiles/common.mk
 
-BUNDLE_NAME = STUPrefs
+BUNDLE_NAME = SlydPrefs
 $(BUNDLE_NAME)_FILES = Preferences.m STUCell.m
 $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
 $(BUNDLE_NAME)_FRAMEWORKS = UIKit

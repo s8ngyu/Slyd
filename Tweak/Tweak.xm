@@ -173,7 +173,7 @@ static void displayStatusChanged(CFNotificationCenterRef center, void *observer,
 }
 
 static void reloadPreferences() {
-    HBPreferences *file = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.stu"];
+    HBPreferences *file = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.slyd"];
     enabled = [([file objectForKey:@"Enabled"] ?: @(YES)) boolValue];
     showChevron = [([file objectForKey:@"ShowChevron"] ?: @(YES)) boolValue];
     text = [file objectForKey:@"Text"];
@@ -190,7 +190,7 @@ static void reloadPreferences() {
 
 %ctor{
     reloadPreferences();
-    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPreferences, (CFStringRef)@"me.nepeta.stu/ReloadPrefs", NULL, kNilOptions);
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPreferences, (CFStringRef)@"me.nepeta.slyd/ReloadPrefs", NULL, kNilOptions);
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, displayStatusChanged, CFSTR("com.apple.iokit.hid.displayStatus"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 
     %init(SlideToUnlock);

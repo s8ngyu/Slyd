@@ -25,7 +25,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>me.nepeta.stu</string>
+			<string>me.nepeta.slyd</string>
 			<key>label</key>
 			<string>ENABLED</string>
 			<key>key</key>
@@ -33,7 +33,7 @@
 			<key>alternateColors</key>
 			<true/>
 			<key>PostNotification</key>
-			<string>me.nepeta.stu/ReloadPrefs</string>
+			<string>me.nepeta.slyd/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -41,7 +41,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>me.nepeta.stu</string>
+			<string>me.nepeta.slyd</string>
 			<key>label</key>
 			<string>SHOW_CHEVRON</string>
 			<key>key</key>
@@ -49,7 +49,7 @@
 			<key>alternateColors</key>
 			<true/>
 			<key>PostNotification</key>
-			<string>me.nepeta.stu/ReloadPrefs</string>
+			<string>me.nepeta.slyd/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -59,7 +59,7 @@
 			<key>placeholder</key>
 			<string>SLIDE_TO_UNLOCK</string>
 			<key>defaults</key>
-			<string>me.nepeta.stu</string>
+			<string>me.nepeta.slyd</string>
 			<key>label</key>
 			<string>STU_TEXT</string>
 			<key>key</key>
@@ -67,7 +67,7 @@
 			<key>alternateColors</key>
 			<true/>
 			<key>PostNotification</key>
-			<string>me.nepeta.stu/ReloadPrefs</string>
+			<string>me.nepeta.slyd/ReloadPrefs</string>
 		</dict>
 		
 		<!-- Credits -->

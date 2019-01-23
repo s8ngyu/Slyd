@@ -1,6 +1,6 @@
 {
     entry = {
-	bundle = STUPrefs;
+	bundle = SlydPrefs;
 	cell = PSLinkCell;
 	detail = STUPrefsListController;
 	isController = 1;

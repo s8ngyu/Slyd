@@ -32,7 +32,7 @@
 }
 
 - (void)resetPrefs:(id)sender {
-    HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.stu"];
+    HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.slyd"];
     [prefs removeAllObjects];
 
     [self respring:sender];
