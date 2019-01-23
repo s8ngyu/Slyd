@@ -1,5 +1,5 @@
 Package: me.nepeta.stu
-Name: SlideToUnlock
+Name: Slyd (SlideToUnlock)
 Depends: mobilesubstrate, ws.hbang.common (>= 1.11), firmware (>= 11.0)
 Version: 0.1.0
 Architecture: iphoneos-arm

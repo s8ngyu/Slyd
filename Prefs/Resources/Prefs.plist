@@ -75,7 +75,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>SlideToUnlock by Nepeta</string>
+			<string>Slyd by Nepeta</string>
 			<key>isStaticText</key>
 			<true/>
 		</dict>
@@ -118,7 +118,7 @@
 			<key>subtitle</key>
 			<string>SOURCE_CODE</string>
 			<key>url</key>
-			<string>https://github.com/Nepeta/SlideToUnlock</string>
+			<string>https://github.com/Nepeta/Slyd</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -132,6 +132,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>SlideToUnlock</string>
+	<string>Slyd</string>
 </dict>
 </plist>
