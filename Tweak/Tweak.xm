@@ -23,36 +23,6 @@ void setIsOnLockscreen(bool isIt) {
 
 %group SlideToUnlock
 
-%hook SBDashBoardFixedFooterViewController
-
--(id)init {
-    id orig = %orig;
-    sdbffvc = self;
-    return orig;
-}
-
--(void)viewDidLoad{
-    %orig;
-    [self stuStateChanged];
-}
-
-%new;
--(void)stuStateChanged {
-    if (enabled) {
-        for (UIView* view in self.view.subviews) {
-            view.alpha = 0.0;
-            view.hidden = YES;
-        }
-    } else {
-        for (UIView* view in self.view.subviews) {
-            view.alpha = 1.0;
-            view.hidden = NO;
-        }
-    }
-}
-
-%end
-
 %hook SBDashBoardMainPageView
 
 %property (nonatomic, retain) _UIGlintyStringView *stuGlintyStringView;
@@ -160,9 +130,15 @@ void setIsOnLockscreen(bool isIt) {
 
 %end
 
-%hook SBDashBoardPageControl
+%hook SBDashBoardFixedFooterViewController
 
--(void)layoutSubviews {
+-(id)init {
+    id orig = %orig;
+    sdbffvc = self;
+    return orig;
+}
+
+-(void)viewDidLoad{
     %orig;
     [self stuStateChanged];
 }
@@ -170,11 +146,11 @@ void setIsOnLockscreen(bool isIt) {
 %new;
 -(void)stuStateChanged {
     if (enabled) {
-        self.alpha = 0.0;
-        self.hidden = YES;
+        self.view.alpha = 0.0;
+        self.view.hidden = YES;
     } else {
-        self.alpha = 1.0;
-        self.hidden = NO;
+        self.view.alpha = 1.0;
+        self.view.hidden = NO;
     }
 }
 
