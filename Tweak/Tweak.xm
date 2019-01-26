@@ -95,7 +95,7 @@ void setIsOnLockscreen(bool isIt) {
             && !preventHome && isOnLockscreen && enabled) {
         preventHome = true;
         canUnlock = true;
-        [[UIApplication sharedApplication] _simulateHomeButtonPress];
+        [[%c(SBLockScreenManager) sharedInstance] lockScreenViewControllerRequestsUnlock];
     }
 
     if (self.currentPageIndex != 0) {
