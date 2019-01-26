@@ -84,6 +84,7 @@
 @interface SBCoverSheetSlidingViewController : UIViewController
 
 -(void)_handleDismissGesture:(id)arg1 ;
+-(void)setPresented:(BOOL)arg1 animated:(BOOL)arg2 withCompletion:(/*^block*/id)arg3 ;
 
 @end
 

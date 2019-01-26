@@ -13,10 +13,12 @@ static SBDashBoardFixedFooterViewController *sdbffvc = nil;
 static SBDashBoardTeachableMomentsContainerViewController *sdbtmcvc = nil;
 static bool preventHome = false;
 static bool isOnLockscreen = true;
+static bool canUnlock = false;
 
 void setIsOnLockscreen(bool isIt) {
     isOnLockscreen = isIt;
     preventHome = false;
+    canUnlock = false;
     [sdbmpv stuStateChanged];
     [sdbtcv stuStateChanged];
     [sdbffvc stuStateChanged];
@@ -90,6 +92,7 @@ void setIsOnLockscreen(bool isIt) {
     if (self.currentPageIndex == 0 && self.pageRelativeScrollOffset < 0.50
             && !preventHome && isOnLockscreen && enabled) {
         preventHome = true;
+        canUnlock = true;
         [[UIApplication sharedApplication] _simulateHomeButtonPress];
     }
 
@@ -110,7 +113,15 @@ void setIsOnLockscreen(bool isIt) {
     if (isOnLockscreen && enabled) {
         return;
     }
-    
+
+    %orig;
+}
+
+-(void)setPresented:(BOOL)arg1 animated:(BOOL)arg2 withCompletion:(/*^block*/id)arg3 {
+    if (isOnLockscreen && enabled && !arg1 && !canUnlock) {
+        return;
+    }
+
     %orig;
 }
 
