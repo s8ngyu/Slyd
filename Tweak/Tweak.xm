@@ -3,6 +3,8 @@
 /* Config */
 static bool enabled = true;
 static bool showChevron = true;
+static bool disableHome = true;
+static bool disableSwipe = true;
 static NSString *text = @"slide to unlock";
 
 /* Random stuff to keep track of */
@@ -110,7 +112,7 @@ void setIsOnLockscreen(bool isIt) {
 %hook SBCoverSheetPrimarySlidingViewController
 
 -(void)_handleDismissGesture:(id)arg1 {
-    if (isOnLockscreen && enabled) {
+    if (enabled && isOnLockscreen && disableSwipe) {
         return;
     }
 
@@ -118,7 +120,7 @@ void setIsOnLockscreen(bool isIt) {
 }
 
 -(void)setPresented:(BOOL)arg1 animated:(BOOL)arg2 withCompletion:(/*^block*/id)arg3 {
-    if (isOnLockscreen && enabled && !arg1 && !canUnlock) {
+    if (enabled && isOnLockscreen && disableHome && !arg1 && !canUnlock) {
         return;
     }
 
@@ -229,6 +231,8 @@ static void reloadPreferences() {
     HBPreferences *file = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.slyd"];
     enabled = [([file objectForKey:@"Enabled"] ?: @(YES)) boolValue];
     showChevron = [([file objectForKey:@"ShowChevron"] ?: @(YES)) boolValue];
+    disableHome = [([file objectForKey:@"DisableHome"] ?: @(YES)) boolValue];
+    disableSwipe = [([file objectForKey:@"DisableSwipe"] ?: @(YES)) boolValue];
     text = [file objectForKey:@"Text"];
     if (!text) text = @"slide to unlock";
 
