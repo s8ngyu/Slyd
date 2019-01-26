@@ -10,6 +10,7 @@ static SBPagedScrollView *psv = nil;
 static SBDashBoardMainPageView *sdbmpv = nil;
 static SBDashBoardTodayContentView *sdbtcv = nil;
 static SBDashBoardFixedFooterViewController *sdbffvc = nil;
+static SBDashBoardTeachableMomentsContainerViewController *sdbtmcvc = nil;
 static bool preventHome = false;
 static bool isOnLockscreen = true;
 
@@ -19,6 +20,7 @@ void setIsOnLockscreen(bool isIt) {
     [sdbmpv stuStateChanged];
     [sdbtcv stuStateChanged];
     [sdbffvc stuStateChanged];
+    [sdbtmcvc stuStateChanged];
 }
 
 %group SlideToUnlock
@@ -155,6 +157,34 @@ void setIsOnLockscreen(bool isIt) {
 }
 
 %end
+
+%hook SBDashBoardTeachableMomentsContainerViewController
+
+-(id)init {
+    id orig = %orig;
+    sdbtmcvc = self;
+    return orig;
+}
+
+-(void)viewDidLoad{
+    %orig;
+    [self stuStateChanged];
+}
+
+%new;
+-(void)stuStateChanged {
+    if (enabled) {
+        self.view.alpha = 0.0;
+        self.view.hidden = YES;
+    } else {
+        self.view.alpha = 1.0;
+        self.view.hidden = NO;
+    }
+}
+
+%end
+
+/* Check for unlock */
 
 %hook SBDashBoardViewController
 

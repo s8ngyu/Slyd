@@ -35,6 +35,10 @@
 
 @end
 
+@interface SBDashBoardTeachableMomentsContainerViewController : UIViewController
+-(void)stuStateChanged;
+@end
+
 @interface SBUIPasscodeLockNumberPad : UIView
 
 -(void)setVisible:(BOOL)arg1 animated:(BOOL)arg2 ;
@@ -50,7 +54,6 @@
 
 }
 
-@property (nonatomic, retain) _UIGlintyStringView *stuGlintyStringView;
 @property (nonatomic,readonly) UIView * fixedFooterView; 
 @property (readonly) unsigned long long hash; 
 @property (readonly) Class superclass; 
