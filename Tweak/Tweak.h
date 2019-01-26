@@ -80,3 +80,13 @@
 -(void)_simulateHomeButtonPress;
 
 @end
+
+@interface SBCoverSheetSlidingViewController : UIViewController
+
+-(void)_handleDismissGesture:(id)arg1 ;
+
+@end
+
+@interface SBCoverSheetPrimarySlidingViewController : SBCoverSheetSlidingViewController
+
+@end

@@ -104,6 +104,18 @@ void setIsOnLockscreen(bool isIt) {
 
 %end
 
+%hook SBCoverSheetPrimarySlidingViewController
+
+-(void)_handleDismissGesture:(id)arg1 {
+    if (isOnLockscreen && enabled) {
+        return;
+    }
+    
+    %orig;
+}
+
+%end
+
 /* Bloat remover */
 
 %hook SBDashBoardTodayContentView
